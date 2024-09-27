@@ -1,32 +1,12 @@
-// Desestructuracion de arreglos
+import { heroes } from "./data/heroes";
 
-const personajes = ["Goku", "Vegeta", "Trunks"];
+console.log(heroes);
 
-const [, , nombre3] = personajes; // las comas generan ignorance
 
-console.log(nombre3); // Trunks
-
-const retornaArreglo = () => {
-  return ["ABC", 123];
+// El método find ejecuta la función callback una vez por cada índice del array hasta que encuentre uno en el que el callback devuelva un valor verdadero. Si es así, find devuelve inmediatamente el valor del elemento. En caso contrario, find devuelve undefined.
+const getHeroById = (id) => {
+  return heroes.find((hero) => hero.id === id);
+  
 };
 
-const [letras, numero] = retornaArreglo();
-
-console.log(letras, numero);
-
-//tarea
-//1. el primer valor del arr se llamara nombre
-//2. el segundo se llamara setNombre
-const useState = (valor) => {
-  return [
-    valor,
-    () => {
-      console.log("Hola mundo");
-    },
-  ];
-};
-
-const [nombre, setNombre] = useState("Goku");
-
-console.log(nombre);
-setNombre()
+console.log(getHeroById(2))

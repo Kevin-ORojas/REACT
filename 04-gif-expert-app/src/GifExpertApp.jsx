@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GiftGrid } from "./components/GiftGrid";
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["Planeta juan", "dragon ball"]);
+  const [categories, setCategories] = useState(["One punch"]);
 
-  const onAddNewCategories = () => {
+  const onAddCategory = (newCategory) => {
+    if (
+      categories.some((cat) => cat.toLowerCase() === newCategory.toLowerCase())
+    ) {
+      return; // Si existe, no hacemos nada
+    }
     // valorant
-    setCategories([...categories, "valorant"]);
+    setCategories([newCategory, ...categories]);
   };
   return (
     <div>
-      <h1>Over View List youtu</h1>
+      <h1>Gifs</h1>
 
-      {/* input */}
-      <AddCategory setCategories={setCategories} />
-      {/* listado de videos */}
-      <button onClick={onAddNewCategories}>agregar</button>
-      <ol>
-        {categories.map((category) => (
-          <li key={category}>{category}</li>
-        ))}
-      </ol>
+      <AddCategory onNewCategory={onAddCategory} />
 
-      {/* item de videoss */}
+      {categories.map((category) => (
+        <GiftGrid key={category} category={category} />
+      ))}
     </div>
   );
 };

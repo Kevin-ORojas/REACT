@@ -1,6 +1,7 @@
 import React from "react";
 import { CounterApp } from "./01-usestate/CounterApp";
 import { CounterWithCustomHook } from "./01-usestate/CounterWithCustomHook";
+import { SimpleForm } from "./02-useEffect/SimpleForm";
 
 export const HookApp = () => {
   return (
@@ -8,6 +9,9 @@ export const HookApp = () => {
       <CounterApp />
       <hr />
       <CounterWithCustomHook />
+
+      <hr />
+      <SimpleForm />
     </div>
   );
 };

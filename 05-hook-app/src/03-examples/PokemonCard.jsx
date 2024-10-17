@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 
 export const PokemonCard = ({ id, name, sprites }) => {
+  const pRef = useRef();
   return (
     <section style={{ height: 200 }}>
       <h2 className="text-capitalize">

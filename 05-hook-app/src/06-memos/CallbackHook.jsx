@@ -13,8 +13,8 @@ export const CallbackHook = () => {
   /* El useCallback nos devuelve una versión optimizada de la función que se pasa como argumento.
   Esta versión se utiliza en lugar de la original cuando se pasa como prop a un componente o cuando se utiliza como dependencia de un useEffect. */
 
-  const incrementFather = useCallback(() => {
-    setCounter((value) => value + 1);
+  const incrementFather = useCallback((value) => {
+    setCounter((c) => c + value);
   }, []);
 
   return (

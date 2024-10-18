@@ -3,7 +3,7 @@ import React from "react";
 export const ShowIncrement = ({ increment }) => {
   return (
     <div>
-      <button className="btn btn-primary" onClick={() => increment()}>
+      <button className="btn btn-primary" onClick={() => increment(2)}>
         Increment
       </button>
     </div>
